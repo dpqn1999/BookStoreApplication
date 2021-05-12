@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bookaholic</title>
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+
+	<th:block th:include="/_header"></th:block>
+	<th:block th:include="/_menu"></th:block>
+    <div class="createBookContainer">
+	<div class="page-title">Book</div>
+	<div th:if="${errorMessage!= null}" class="error-message"
+		th:utext="${errorMessage}"></div>
+
+	<form th:object="${bookForm}" th:action="@{/admin/book}"
+		class="createForm" method="POST" enctype="multipart/form-data" id="addbookform">
+		<table style="text-align: left;">
+			<tr>
+				<td th:if="${!bookForm.newBook}" >Book ID*</td>
+				<td style="color: red;"><th:block th:if="${!bookForm.newBook}">
+						<span class="bookid" th:utext="${bookForm.bookId}"></span>
+						<input type="hidden" th:field="*{bookId}" />
+					</th:block></td>
+				<td><span class="error-message"
+					th:if="${#fields.hasErrors('bookId')}" th:errors="*{bookId}">..</span></td>
+			</tr>
+			<tr>
+				<td>Book Name   <span class="need">*</span></td>
+				<td><input maxlength="128" 
+					class="createInput" required="required" th:field="*{bookName}" /></td>
+				<td><span class="error-message"
+					th:if="${#fields.hasErrors('bookName')}" th:errors="*{bookName}">..</span>
+				</td>
+			</tr>
+			<tr>
+				<td>Book Price <span class="need">*</span></td>
+				<td><input type="number"   class="createInput"
+					required="required" th:field="*{bookPrice}" /></td>
+				<td><span class="error-message"
+					th:if="${#fields.hasErrors('bookPrice')}" th:errors="*{bookPrice}">..</span>
+				</td>
+			</tr>
+			<tr>
+				<td >Book Type <span class="need">*</span></td>
+				<td><select class="form-control" th:field="*{bookType}">
+						<option th:value="${bookForm.bookType}" selected="selected"
+							th:text="${bookForm.bookType}"></option>
+						<option th:each="type : ${types.keySet()}"
+							th:if="${type != bookForm.bookType}" th:value="${type}"
+							th:text="${types.get(type)}"></option>
+				</select></td>
+			<tr>
+				<td>Book Quantity <span class="need">*</span> </td>
+				<td><input type="number" class="createInput"
+					required="required" th:field="*{bookQuantity}" /></td>
+				<td><span class="error-message"
+					th:if="${#fields.hasErrors('bookQuantity')}"
+					th:errors="*{bookQuantity}">..</span></td>
+			</tr>
+			
+			<tr>
+				<td>Author <span class="need">*</span></td>
+				<td><select class="form-control" th:field="*{authorId}">
+						<option value="0"></option>
+						<option th:each="authorInfo : ${paginationAuthors.list}"
+							th:value="${authorInfo.authorId}"
+							th:text="${authorInfo.authorName}"></option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Publisher <span class="need">*</span></td>
+				<td><select class="form-control" th:field="*{publisherId}">
+						<option value="0"></option>
+						<option th:each="publisherInfo : ${paginationPublishers.list}"
+							th:value="${publisherInfo.publisherId}"
+							th:text="${publisherInfo.publisherName}"></option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Book Description</td>
+				<td><textarea 
+					class="createInput" maxlength="250" th:field="*{bookDescription}" /></textarea></td>
+				<td><span class="error-message"
+					th:if="${#fields.hasErrors('bookDescription')}"
+					th:errors="*{bookDescription}">..</span></td>
+			</tr>
+			<tr>
+				<td>Image</td>
+				<td><img th:src="@{|/bookImage?bookId=${bookForm.bookId}|}"
+					width="100" /></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Upload Image</td>
+				<td><input class="upImage" type="file" th:field="*{fileData}" /></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" class="btnAdd" value="Submit" />
+					</td>
+			</tr>
+		</table>
+	</form>
+</div>
+	<th:block th:include="/_footer"></th:block>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="UTF-8">
+<title>Bookaholic</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+
+
+	<th:block th:include="/_header"></th:block>
+	<th:block th:include="/_menu"></th:block>
+
+	
+	<div th:if="${errorMessage!= null}" class="error-message"
+		th:utext="${errorMessage}"></div>
+
+	<div class="container" id="inforContainer">
+		<div class="row">
+
+			<div class="col-5">
+				<a th:href="@{|/bookInfo?bookId=${bookInfo.bookId}|}"><img
+					class="product-image"
+					th:src="@{|/bookImage?bookId=${bookInfo.bookId}|}" /></a>
+			</div>
+			<div class="col-7">
+				<ul>
+					<li><span class="nameBook" th:utext="${bookInfo.bookName}"></span></li>
+					<li class="price"><span 
+						th:utext="${#numbers.formatDecimal(bookInfo.bookPrice, 1, 'DEFAULT', 0, 'DEFAULT')}"></span></li>
+					<li>Type: <span th:utext="${bookInfo.bookType}"></span></li>
+					<li>Quantity: <span th:utext="${bookInfo.bookQuantity}"></span></li>
+
+					<li>Author: <span
+						th:utext="${authorList.get(bookInfo.authorId)}"></span></li>
+					<li>Publisher: <span
+						th:utext="${publisherList.get(bookInfo.publisherId)}"></span></li>
+					<li>Description: <span th:utext="${bookInfo.bookDescription}"></span></li>
+					<th:block   sec:authorize="hasRole('ROLE_CUSTOMER')">
+						<li class="buyBtn" ><a th:href="@{|/buyBook?bookId=${bookInfo.bookId}|}">Buy
+								Now</a></li>
+					</th:block>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+
+	<th:block th:include="/_footer"></th:block>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bookaholic</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+	<th:block th:include="/_header"></th:block>
+	<th:block th:include="/_menu"></th:block>
+	<div class="deliveryInforPage">
+		<div class="page-title">Delivery Information</div>
+		<form method="POST" class="createForm" th:object="${deliveryForm}"
+			th:action="@{/shoppingCartAccount}">
+			<table>
+				<tr>
+					<td>Delivery Phone <span class="need">*</span></td>
+					<td><input  maxlength="10" minlength="10" type="number" class="createInput" required="required"
+						th:field="*{orderPhone}" /></td>
+					<td><span class="error-message"
+						th:if="${#fields.hasErrors('orderPhone')}"
+						th:errors="*{orderPhone}">..</span></td>
+				</tr>
+				<tr>
+					<td>Delivery Address <span class="need">*</span></td>
+					<td><input maxlength="50" class="createInput" required="required"
+						th:field="*{orderAddress}" /></td>
+					<td><span class="error-message"
+						th:if="${#fields.hasErrors('orderAddress')}"
+						th:errors="*{orderAddress}">..</span></td>
+				</tr>
+				<tr class="comment">
+					<td>Comment</td>
+					<td><textarea class="createInput" th:field="*{orderComment}" /></textarea></td>
+					<td><span class="error-message"
+						th:if="${#fields.hasErrors('orderComment')}"
+						th:errors="*{orderComment}">..</span></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><input class="btnSubmit" type="submit" value="Submit" />
+						</td>
+				</tr>
+			</table></form>
+	</div>
+	
+	<th:block th:include="/_footer"></th:block>
+</body>
+</html>

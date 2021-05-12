@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="UTF-8">
+<title>Bookaholic</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+	<th:block th:include="/_header"></th:block>
+	<th:block th:include="/_menu"></th:block>
+
+	<div class="page-title">Publisher List</div>
+	<th:block>
+		<a th:href="@{/admin/publisher}" id="create"> Create </a>
+	</th:block>
+	<div class="product_container" id="authorcontain">
+		<table style="width: 100%" class="table table-hover">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th colspan="2">Function</th>
+			</tr>
+			<tr th:each="publisherInfo : ${paginationResult.list}">
+				<td class="idproduct" th:utext="${publisherInfo.publisherId}"></td>
+				<td th:utext="${publisherInfo.publisherName}"></td>
+				<td class="function"><a style="color: red;"
+					th:href="@{|/admin/publisher?publisherId=${publisherInfo.publisherId}|}"><i
+						class="fas fa-pencil-alt"></i> </a></td>
+				<td class="function"><a style="color: red;"
+					th:href="@{|/admin/deletePublisher?publisherId=${publisherInfo.publisherId}|}"  onclick="if (confirm('Are you sure you want to delete this publisher?')) form.action='/Config?pg=FIBiller&amp;cmd=delete'; else return false;"><i
+						class="fas fa-trash"></i> </a></td>
+
+			</tr>
+		</table>
+
+
+	</div>
+	<th:block th:include="/_footer"></th:block>
+
+</body>
+</html>

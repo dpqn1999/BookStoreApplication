@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bookaholic</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+	<th:block th:include="/_header"></th:block>
+	<th:block th:include="/_menu"></th:block>
+	<h2 class="title">Confirmation</h2>
+
+	<div class=container-fluid>
+		<div class="row">
+			<div class="col-6">
+				<form method="POST" th:object="${cartForm}"
+					th:action="@{/shoppingCartConfirmation}">
+					<table style="width: 90%" class="table table-hover"
+						id="shoppingcartreview">
+						<tr>
+							<th>Image</th>
+							<th>Book Name</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Subtotal</th>
+
+
+
+						</tr>
+						<tr th:each="cartLineInfo : ${myCart.cartLines}">
+
+							<td class="tdImage"><img class="product-image-cart"
+								th:src="@{|/bookImage?bookId=${cartLineInfo.bookInfo.bookId}|}" /></td>
+							<td class="tdInfor"><input type="hidden"
+								th:value="${cartLineInfo.bookInfo.bookId}" />
+								<div th:utext="${cartLineInfo.bookInfo.bookName}"></div>
+							<td><span
+								th:utext="${#numbers.formatDecimal(cartLineInfo.bookInfo.bookPrice, 1, 'DEFAULT', 0, 'COMMA')}">
+							</span></td>
+							<td><span th:utext="${cartLineInfo.quantity}"></span></td>
+							<td><span class="subtotal"
+								th:utext="${#numbers.formatDecimal(cartLineInfo.amount, 1, 'DEFAULT', 0, 'COMMA')}">
+							</span></td>
+
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="col-6">
+
+				<div class="customer-info-container">
+					<h3>Customer Information:</h3>
+					<ul>
+						<li>Name: <span th:utext="${myCart.accountInfo.accountName}"></span></li>
+						<li>Email: <span
+							th:utext="${myCart.accountInfo.accountEmail}"></span></li>
+						<li>Delivery Phone: <span
+							th:utext="${myCart.deliveryInfo.orderPhone}"></span></li>
+						<li>Delivery Address: <span
+							th:utext="${myCart.deliveryInfo.orderAddress}"></span></li>
+							<li>Comment: <span
+							th:utext="${myCart.deliveryInfo.orderComment}"></span></li>
+					</ul>
+					<h3>Cart Summary:</h3>
+					<ul>
+						<li>Quantity: <span th:utext="${myCart.quantityTotal}"></span>
+						</li>
+						<li>Total: <span class="total"
+							th:utext="${#numbers.formatDecimal(myCart.amountTotal,1, 'DEFAULT', 0, 'COMMA')}">
+						</span>
+						</li>
+					</ul>
+				</div>
+				<form method="POST" th:action="@{/shoppingCartConfirmation}"
+					id="confirOrder">
+					
+					<!-- Edit Account Info -->
+					<a class="navi-item" id="btnitem1" th:href="@{/shoppingCartAccount}"> <i
+						class="fas fa-angle-left"></i>Back
+					</a>
+					<!-- Send/Save -->
+					<input type="submit" value="Finish" class="button-send-sc" />
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<th:block th:include="/_footer"></th:block>
+
+</body>
+</html>

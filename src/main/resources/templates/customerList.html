@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+   xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+	  <meta charset="UTF-8">
+      <title>Bookaholic</title>
+      
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+	  <th:block th:include="/_header"></th:block>
+      <th:block th:include="/_menu"></th:block>
+
+	<div class="page-title">Customer List</div>
+	<div class="product_container" id="ordercontain">
+	<table  style="width: 100%" class="table table-hover" >
+		<tr>
+			<th>ID</th>
+			<th>Username</th>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Address</th>
+		</tr>
+		<tr th:each="accountInfo : ${paginationResult.list}">
+			<td th:utext="${accountInfo.accountId}"></td>
+			<td th:utext="${accountInfo.accountUsername}"></td>
+			<td th:utext="${accountInfo.accountName}"></td>
+			<td th:utext="${accountInfo.accountPhone}"></td>
+			<td th:utext="${accountInfo.accountEmail}"></td>
+			<td th:utext="${accountInfo.accountAddress}"></td>
+		</tr>
+	</table>
+	
+	
+	</div>
+	<th:block th:include="/_footer"></th:block>
+	
+</body>
+</html>

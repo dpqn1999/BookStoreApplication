@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bookaholic</title>
+
+
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+</head>
+<body>
+	<th:block th:include="/_header"></th:block>
+	<th:block th:include="/_menu"></th:block>
+
+	<div class="page-title">Login</div>
+	<div class="login-container">
+
+		<br>
+		<!-- /login?error=true -->
+		<th:block
+			th:if="${#session != null && #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}">
+			<div th:if="${#request.getParameter('error') == 'true'}"
+				style="color: red; margin: 10px 0px;">
+				Login Failed!!!<br /> Reason : <span
+					th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}"></span>
+			</div>
+		</th:block>
+
+		<form class="createForm" method="POST"
+			th:action="@{/j_spring_security_check}">
+			<table>
+				<tr>
+					<td>Username <span class="need">*</span></td>
+					<td><input  class="createInput"
+						required="required" name="username" /></td>
+				</tr>
+				<tr>
+					<td>Password <span class="need">*</span></td>
+					<td><input  class="createInput"
+						required="required" type="password" name="password" /></td>
+				</tr>
+				<tr class="reset">
+					<td colspan="2"><a th:href="@{/resetPassword}">Forgot
+							Password?</a></td>
+				</tr>
+
+				<tr>
+					<td>&nbsp;</td>
+					<td><input id="btn1" class="buttonSubmit" type="submit"
+						value="Login" />
+				</tr>
+
+
+				<tr class="reset">
+
+					<td colspan="2"><span>Not a member? </span><a
+						th:href="@{/signup}" class="signup">Create Your Account</a> <span
+						class="error-message" th:utext="${error}"></span></td>
+				</tr>
+
+
+			</table>
+		</form>
+
+	</div>
+
+
+
+	<th:block th:include="/_footer"></th:block>
+
+</body>
+</html>

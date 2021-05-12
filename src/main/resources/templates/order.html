@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bookaholic</title>
+
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+	<th:block th:include="/_header"></th:block>
+	<th:block th:include="/_menu"></th:block>
+
+	<div class="page-title">Order Information</div>
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-7">
+				<table class="table table-hover" id="orderInfor">
+					<tr>
+						<th>Book ID</th>
+						<th>Book Name</th>
+						<th>Quantity</th>
+						<th class="price-product">Price</th>
+						<th class="price-product">Subtotal</th>
+					</tr>
+					<tr th:each="orderDetailInfo : ${orderInfo.details}">
+						<td th:utext="${orderDetailInfo.bookId}"></td>
+						<td th:utext="${orderDetailInfo.bookName}"></td>
+						<td th:utext="${orderDetailInfo.orderDetailQuantity}"></td>
+						<td class="price-product"
+							th:utext="${#numbers.formatDecimal(orderDetailInfo.orderDetailPrice, 1, 'DEFAULT', 0, 'COMMA')}"></td>
+						<td class="price-product"
+							th:utext="${#numbers.formatDecimal(orderDetailInfo.orderDetailAmount, 1, 'DEFAULT', 0, 'COMMA')}"></td>
+					</tr>
+				</table>
+
+
+			</div>
+			<div class="col-5">
+				<div class="orderinforContainer">
+					<h3>Account Information:</h3>
+					<ul>
+						<li>Name: <span th:utext="${accountInfo.accountName}"></span></li>
+						<li>Email: <span th:utext="${accountInfo.accountEmail}"></span></li>
+						<li>Phone: <span th:utext="${orderInfo.orderPhone}"></span></li>
+						<li>Address: <span th:utext="${orderInfo.orderAddress}"></span></li>
+						<li>Comment: <span th:utext="${orderInfo.orderComment}"></span></li>
+					</ul>
+					<h3 class="subtittle">Order Summary:</h3>
+					<ul>
+						<li>Total: <span class="total"
+							th:utext="${#numbers.formatDecimal(orderInfo.orderAmount, 1, 'DEFAULT', 0, 'COMMA')}">
+						</span>
+						</li>
+					</ul>
+
+				</div>
+				<div class="customer-info-container">
+
+					<form method="POST" th:object="${orderInfo}"
+						th:action="@{/admin/order}">
+						<table>
+							<tr>
+								<td><input type="hidden" th:field="*{orderId}" /> <span
+									class="error-message" th:if="${#fields.hasErrors('orderId')}"
+									th:errors="*{orderId}"></span></td>
+
+							</tr>
+							<tr>
+								<td class="status">Status</td>
+								<td><select th:field="*{orderStatus}">
+										<option th:value="${orderInfo.orderStatus}"
+											selected="selected" th:text="${orderInfo.orderStatus}"></option>
+										<option th:each="status : ${statuses.keySet()}"
+											th:if="${status != orderInfo.orderStatus}"
+											th:value="${status}" th:text="${statuses.get(status)}"></option>
+								</select></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td><input class="saveButton" type="submit" value="Save" />
+							</tr>
+						</table>
+					</form>
+
+				</div>
+				<br />
+
+
+
+
+			</div>
+		</div>
+
+	</div>
+
+	<th:block th:include="/_footer"></th:block>
+
+</body>
+</html>

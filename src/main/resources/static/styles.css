@@ -1,0 +1,907 @@
+h3 {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	font-family: sans-serif;
+}
+
+
+#shoppingcartreview {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+}
+.createBookContainer textarea {
+	height: 120px;
+	width: 300px;
+}
+#shoppingcartreview td {
+	width: 150px;
+}
+.quantity-product {
+	text-align: center;
+}
+.createBookContainer {
+	text-align: center;
+}
+h2 {
+	margin: 25px 0px;
+}
+
+.customer-info-container {
+	margin: 25px 0px;
+}
+
+#shoppingcartreview img {
+	width: 30%;
+}
+
+#shoppingcartreview input {
+	width: 80px;
+}
+
+.site-name div {
+	display: inline-block;
+	margin-right: -15px;;
+	padding: 0px;
+}
+
+.iconname1 {
+	color: #F55858;
+}
+
+.idValue span {
+	margin-left: 22px;
+}
+
+.iconname2 {
+	color: #11386E;
+}
+
+#iconuser {
+	font-size: 250px;
+	margin-top: 10x;
+	color: #2A8DF8;
+	border: 6px solid white;
+	padding: 40px;
+}
+
+#customercontainer {
+	background-color: white;
+	margin-top: 25px;
+}
+
+.searchProduct {
+	text-align: right;
+	display: block;
+	margin-top: 20px;
+	margin-right: 50px;
+	
+}
+
+#confirOrder {
+    text-align: left;
+    padding-left: 25px;
+}
+#confirOrder a {
+   padding: 4px 8px;
+}
+#confirOrder input {
+   padding: 3px 10px;
+}
+.table table-hover {
+	border-top: 1px solid #dee2e6;
+}
+
+.searchButton {
+	color: black;
+	background: white;
+	border: 2px solid #555555;
+	border-radius: 3px;
+}
+
+#inforContainer {
+	margin-top: 10px;
+	padding: 35px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.orderinforContainer {
+	text-align: left;
+	padding: 26px 25px;
+	padding-bottom: 0px;
+}
+
+.orderinforContainer li {
+	font-weight: bold;
+	padding: 3px;
+	padding-left: 15px;
+}
+
+.orderinforContainer li span {
+	font-weight: normal;
+	padding-left: 5px;
+}
+
+#inforContainer img {
+	width: 350px;
+	height: 500px;
+	border: 1px solid #ccc;
+	padding: 35px;
+}
+
+#inforContainer div ul {
+	margin-left: 0;
+	text-align: left;
+	padding-top: 10px;
+}
+
+#inforContainer div ul li {
+	padding-left: 5px;
+	font-weight: bold;
+}
+
+#inforContainer div ul li span {
+	font-weight: normal;
+}
+
+.searchButton:hover {
+	background-color: #555555;
+	color: white;
+}
+
+body {
+	min-width: 360px;
+	margin: 0px auto;
+	background-color: #F4F4F4;
+
+	
+}
+
+.page-contain {
+	background-color: #F4F4F4;
+	padding-top: 10px;
+}
+
+#bookcontain {
+	background-color: white;
+	max-width: 1200px;
+	margin: auto;
+	display: block;
+	padding-top: 1px;
+	padding-left: 35px;
+	padding-right: 35px;
+	margin-top: 30px;
+	padding-bottom: 20px;
+}
+
+i {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+#authorcontain {
+	background-color: white;
+	max-width: 1000px;
+	margin: auto;
+	display: block;
+	padding: 1px 30px;
+	margin-top: 30px;
+}
+
+#ordercontain {
+	background-color: white;
+	max-width: 1200px;
+	margin: auto;
+	display: block;
+	padding-top: 1px;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-top: 30px;
+	padding-bottom: 20px;
+}
+
+.page-title {
+	font-size: 120%;
+	text-align: left;
+	margin-top: 10px 0px;
+}
+
+.nameBook {
+	font-size: 35px;
+	font-weight: 900;
+}
+
+.price {
+	font-size: 29px;
+	font-weight: bolder !important;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	color: #F39801;
+}
+
+.header-container {
+	text-align: left;
+	position: relative;
+	background: white;
+	color: #16507b;
+	position: relative;
+	padding-left: 35px;
+}
+
+#inforContainer li {
+	padding-bottom: 5px;
+}
+
+.buyBtn {
+	margin-top: 30px;
+	background-color: #FF4C58;
+	width: 100px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.buyBtn:hover {
+	background-color: #FF6B74;
+}
+
+.buyBtn a {
+	color: white !important;
+}
+
+.borderHr {
+	border: 3px solid #F55858;
+	border-radius: 5px;
+	background-color: white;
+	width: 50%;
+	margin-left: 5px;
+	margin-bottom: 0px;
+}
+
+.header-container .header-bar {
+	position: absolute;
+	right: 10px;
+	bottom: 20px;
+	padding-right: 30px;
+}
+
+.header-container .header-bar  a {
+	
+	font-size: bold;
+}
+
+.footer-container {
+	text-align: center;
+	margin-top: 10px;
+	padding: 5px 0px 0px 0px;
+}
+
+.menu-container {
+	text-align: left;
+	padding: 15px;
+	padding-left: 30px;
+	margin-bottom: 5px;
+	background-color: white;
+	margin-top: 0px;
+}
+
+.menu-container a {
+	padding: 10px;
+	padding-left: 10px;
+	color: #363837;
+	margin-left: 15px;
+	margin-right: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+#orderList {
+	border: 1px solid #ddd;
+	background-color: white;
+	max-width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+}
+
+#orderInfor {
+	border: 1px solid #ddd;
+	padding: 5px 20px;
+	margin-left: 45px;
+	width: 95%;
+	background-color: white;
+}
+
+.description {
+	width: ellipsis;
+	height: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.description:hover {
+	overflow: visible;
+	white-space: normal;
+	height: auto;
+}
+
+h3 {
+	font-size: 20px;
+}
+
+.orderinforContainer .subtittle {
+	margin-top: 10px;
+}
+
+.createForm {
+	display: inline-block;
+	font-size: 16px;
+}
+.deliveryInforPage {
+	text-align: center;
+}
+
+.status {
+	font-size: 20px;
+	font-weight: 600;
+	padding-right: 10px;
+}
+
+.customer-info-container {
+	text-align: left;
+	font-size: 16px;
+	padding-left: 24px;
+	margin-top: 20px;
+}
+
+.customer-info-container .title2 {
+	margin-top: 45px;
+}
+
+.form-control {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 20px;
+	width: 200px;
+}
+
+.createForm .createInput {
+	margin: 10px 0px;
+	padding: 8px;
+	width: 300px;
+	margin-left: 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	
+}
+.comment .createInput {
+	height: 120px;
+}
+.createForm {
+	text-align: left;
+}
+#resetForm .createInput  {
+	margin: 10px 0px;
+	padding: 8px;
+	width: 300px;
+	margin-left: 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+#resetForm button  {
+	padding: 6px 15px;
+	margin-left: 40px;	
+	margin-top: 10px;	
+	font-size: 16px;
+	border: none;
+	background-color: #2A8DF8;
+	color: white;
+	font-weight: bold;
+}
+
+.createForm .buttonSubmit {
+	border: none;
+	background-color: inherit;
+	color: #288CF8;
+}
+
+.btnAdd {
+	padding: 6px;
+	margin-right: 8px;
+	margin-top: 5px;
+	width: 70px;
+	border: none;
+	background-color: #2A8DF8;
+	color: white;
+	font-weight: bold;
+}
+
+.btnAdd:hover {
+	background-color: #55A4F9;
+}
+
+#publisherForm .btnAdd {
+	margin-left: 50px;
+	margin-right: -30px;
+}
+
+.signupoption {
+	text-align: center;
+	margin-left: 35px;
+}
+
+.signupoption tr td {
+	padding-left: 8px;
+}
+
+.btnSignup {
+	font-size: 16px;
+	background-color: #2A8DF8;
+	padding: 6px;
+	width: 100px;
+	border: none;
+	color: white;
+	font-weight: 500;
+	margin-left: 45px;
+	margin-top: 20px;
+}
+
+.buttonSubmit {
+	margin-top: 12px;
+	margin-left: 20px;
+	padding: 5px;
+	background-color: white;
+	color: black;
+	border: 2px solid #555555;
+	border-radius: 3px;
+	margin-right: -6px;
+	width: 60px;
+	font-size: 13pX;
+	margin-bottom: 12px;
+}
+
+.AccountInfor {
+	display: inline-block;
+	text-align: center;
+	font-size: 16px;
+	width: 600px;
+	padding: 20px 50px;
+	
+}
+
+.AccountInfor td {
+	font-weight: bold;
+	padding: 10px 0px;
+	
+}
+
+.AccountInfor td span {
+	font-weight: normal;
+	padding-left: 5px;
+	font-size: 18px;
+}
+.reset {
+	text-align: right;
+	
+}
+.reset td {
+	padding-top:4px;
+	
+	
+}
+.reset2{
+	text-align: center;
+}
+
+.updateAcc {
+	background-color: #2A8DF8;
+	color: white;
+	font-weight: bold;
+	padding: 5px;
+	margin: 15px 12px 0px 0px;
+}
+
+#addbookform input {
+	height: 20px;
+	margin-bottom: 10px;
+	padding: 8px 0px;
+}
+
+
+#addbookform select {
+	width: 150px;
+	margin-bottom: 10px;
+	margin-top: 0px;
+	padding: 8px 0px;
+}
+
+#addbookform .btnAdd {
+	height: 100%;
+}
+
+.bookid {
+	margin-left: 20px;
+}
+
+#customerOrderList {
+	background-color: white;
+}
+
+.trpadding {
+	padding-top: 15px;
+}
+
+.btnSubmit {
+	font-size: 16px;
+	background-color: #2A8DF8;
+	padding: 7px;
+	margin-left: 20px;
+	width: 80px;
+	margin-top: 15px;
+	border: none;
+	color: white;
+	font-weight: 500;
+}
+
+.btnSubmit:hover {
+	background-color: #71B3FA;
+}
+
+.createForm img {
+	padding-left: 25px;
+	margin-top: 10px;
+}
+
+.upImage {
+	margin-left: 20px;
+	padding: 25 px;
+}
+
+.buttonSubmit:hover {
+	background-color: #555555;
+	color: white;
+}
+
+.menu-container a:hover {
+	background-color: #ddd;
+}
+
+a:-webkit-any-link {
+	text-decoration: none;
+}
+
+.site-name {
+	font-size: 45px;
+	padding: 5px;
+	font-family: Comic Sans MS;
+	font-weight: bold;
+}
+
+.container {
+	margin: 5px 0px;
+}
+
+.demo-container, .login-container, .account-container  {
+	padding: 5px;
+	margin: 5px 0px;
+	margin-top: -30px;
+}
+
+
+
+#btn1 {
+	width: 90%;
+	font-size: 16px;
+	text-align: center;
+	background-color: #0077F7;
+	border: none;
+	color: white;
+	font-weight: 600;
+}
+
+#btn1:hover {
+	background: #55A4F9;
+}
+
+.container {
+	text-align: center;
+	margin-left: 130px;
+}
+
+.page-title {
+	text-align: center;
+	margin-bottom: 2px;
+	margin-top: 35px;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: Bahnschrift SemiBold;
+}
+.title {
+	text-align: center;
+}
+.subtitle {
+	text-align: center;
+}
+.function {
+	width: 60px;
+}
+.createauthorcontainer , .createpublishercontainer, .changeInforContainer , .changePassContainer,.errorContainer {
+	text-align: center;
+}
+.need {
+	color:red;
+}
+
+#create {
+	color: white;
+	background-color: #2A8DF8;
+	padding: 4px 14px;
+	margin-right: 0;
+	font-size: 16px;
+	margin-left: 1130px;
+}
+#customerOrderList  {
+	text-align: left;
+}
+.searchForm {
+	width: 190px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+	background-color: white;
+	background-image: url('searchicon.png');
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding: 5px 5px 5px 5px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+}
+
+.footer {
+	background-color: #797B7D;
+	text-align: center;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-top: 110px;
+	color: white;
+	font-weight: bold;
+}
+
+.searchForm:focus {
+	width: 30%;
+}
+
+table {
+	margin-top: 30px;
+}
+
+.product-preview-container {
+	border: 1px solid #ccc;
+	padding: 15px 18px;
+	display: inline-block;
+	text-align: left;	
+	margin-bottom: 40px;
+	background-color: white;
+	
+	
+}
+.login-container, .signupContainer {
+	text-align: center;
+}
+.optionsInCart {
+	text-align: right;
+	margin-right: 70px;
+}
+
+#containproduct {
+	text-align: center;
+	margin-top: 60px;
+}
+
+.bookname {
+	width: 220px;
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	min-height: 2.8em;
+	max-height: 2.8em;
+}
+
+.product-preview-container .pricebook {
+	margin-top: 3px;
+	margin-bottom: 5px;
+	color: #F39801;
+	font-weight: bold;
+	font-size: 18px;
+	min-height: 25px;
+	font-size: 19px;
+}
+
+form .product-preview-container {
+	width: 280px;
+}
+
+.product-preview-container input {
+	width: 50px;
+}
+
+.product-preview-container:hover {
+	box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
+
+.idproduct {
+	width: 150px;
+}
+
+.product-image {
+	width: 170px;
+	height: 230px;
+	display: block;
+	padding-bottom: 10px;
+	padding: 15px;
+}
+.product-preview-container .product-image {
+	margin-left: auto;
+	margin-right: auto;
+} 
+.product_container .product-image {
+	width: 50px;
+	height: 70px;
+	padding: 1px;
+}
+.reset {
+	text-align: right;
+}
+ul {
+	list-style-type: none;
+	padding-left: 5px;
+	margin: 5px;
+}
+
+li {
+	color: #333333;
+}
+.signupoption tr  {
+	text-align: center;
+}
+
+.navi-item {
+	
+	color: white;
+	background-color: #0AAAFF;
+	border: none;
+	font-weight: 500;
+	
+	text-align: center;
+	
+}
+#btnitem1 {
+	padding :5px 16px 5px 3px;
+	
+}
+#btnitem2 {
+	padding :5px 3px 5px 16px;
+	
+}
+.button-update-sc {
+	color: white;
+
+	background-color: #0AAAFF;
+	border: none;
+	font-weight: 500;
+	padding: 4px 8px;
+}
+#shoppingcartreview .price-product {
+	text-align: right;
+	padding-right: 120px;
+}
+.price-product {
+	text-align: right;
+	padding-right: 120px;
+}
+#shoppingcartreview {
+	text-align: center;
+}
+.button-send-sc {
+	background-color: #FF4C58;
+	color: white;
+	font-weight: 500;
+	margin: 3px 3px 3px 20px;
+	padding: 0px 15px;
+	border: none;
+}
+.button-send-sc:hover {
+	background-color: #FF6B74;
+	color: white;
+}
+.page-navigator {
+	text-align: center;
+}
+.button-update-sc:hover {
+	background-color: #52C3FF;
+	color: white;
+}
+.navi-item:hover {
+	background-color: #52C3FF;
+	color: white;
+} 
+#shoppingcartreview .name-product {
+	text-align:left;
+}
+#shoppingcartreview input {
+	text-align: center;
+}
+.userName {
+	color: red;
+	font-size: 20px;
+}
+
+.error-message {
+	font-size: 90%;
+	color: red;
+	font-style: italic;
+}
+
+.subtotal {
+	color: red;
+	font-weight: bold;
+}
+
+.total {
+	color: red;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.bookprice {
+	color: #16507b;
+	font-weight: bold;
+}
+
+.buynow:hover {
+	background-color: red;
+	transition-duration: 0.5s;
+	color: white;
+}
+
+.customer-info-container tr {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.customer-info-container h3 {
+	margin-bottom: 20px;
+	margin-top: 15px;
+	
+}
+
+.saveButton {
+	background-color: white;
+	color: black;
+	border: 2px solid #555555;
+	margin-top: 8px;
+	border-radius: 5px;
+}
+
+.saveButton:hover {
+	background-color: #555555;
+	color: white;
+}
+
+.buynow {
+	color: red;
+	font-weight: bold;
+}

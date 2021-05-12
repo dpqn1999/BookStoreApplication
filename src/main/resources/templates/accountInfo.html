@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bookaholic</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+<body>
+
+	<th:block th:include="/_header"></th:block>
+	<th:block th:include="/_menu"></th:block>
+
+	<div class="page-title">Account Information</div>
+	<div th:if="${errorMessage!= null}" class="error-message"
+		th:utext="${errorMessage}"></div>
+
+	<div class="container" id="customercontainer">
+		<div class="row">
+
+			<div class="col-6">
+				<i class="fas fa-user" id="iconuser"></i>
+
+			</div>
+			<div class="col-6">
+				<table class="AccountInfor" style="text-align: left;">
+					<tr>
+						<td>Name: <span th:utext="*{accountInfo.accountName}" /></span></td>
+					</tr>
+					<tr>
+						<td>Phone: <span th:utext="*{accountInfo.accountPhone}" /></span></td>
+					</tr>
+					<tr>
+						<td>Email: <span th:utext="*{accountInfo.accountEmail}" /></span></td>
+					</tr>
+					<tr>
+						<td >Address: <span th:utext="*{accountInfo.accountAddress}" /></span></td>
+					<tr >
+						<td><a class="updateAcc" th:href="@{/changeInfo}">Update
+								Information</a>
+
+						<a class="updateAcc"
+							th:href="@{/changePassword}">Change Password</a></td>
+					</tr>
+				</table>
+
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<th:block th:include="/_footer"></th:block>
+
+</body>
+</html>
